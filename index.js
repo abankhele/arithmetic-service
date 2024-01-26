@@ -1,13 +1,22 @@
-const express = require('express');
-const app = express();
+const express = require( 'express');
+const app = express ();
 const port = 3000;
-app.use(express.static('public'));
-
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
-});
 
 
-app.listen(port, () => {
-    console.log(`Server is listening on port ${port}`);
-});
+app.get ('/add/:n/:m', (req, res) => {
+res.json(Number(req.params.n) + Number(req.params.m));
+res. send ('Arithmetic service - Hello World!');
+}) ;
+
+app. listen (port);
+
+
+async function add() {
+    const operand1Input = document.getElementById("operand1");
+    const operand2Input = document.getElementById("operand1");
+    let n = operand1Input.value;
+    let m = operand2Input.value;
+    const response = await fetch("http://localhost:3000/add/" + n + "/" + m);
+    const sum = await response.json();
+    document.getElementById("sum").innerText = sum;
+}
