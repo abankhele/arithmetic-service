@@ -4,7 +4,7 @@ const cors = require('cors');
 const port = 3000;
 
 app.get ('/',(req,res)=>{
-    res. send ('Arithmetic service - Hello World! Jai shree ram');
+    res. send ('Arithmetic service - Hello World! For addition, type /add/<Number1>/<Number2> in url');
 });
 
 app.get ('/add/:n/:m', (req, res) => {
