@@ -17,4 +17,5 @@ jobs:
               run: |
                 docker login --username pract16 --password ${{secrets.AZURE_CONTAINER_REGISTRY}} pract16.azurecr.io
                 docker tag ghcr.io/abankhele/arithmetic-service:latest pract16.azurecr.io/arithmetic-service:latest 
-                docker push pract16.azurecr.io/abankhele/arithmetic-service:latest 
+                docker push pract16.azurecr.io/arithmetic-service:latest
+ 
